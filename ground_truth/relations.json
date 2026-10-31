@@ -1,0 +1,56 @@
+{
+  "_comment": "Verite terrain des relations (noms normalises, sans accents). Sert a mesurer la precision/rappel de l'extraction LLM.",
+  "DIRECTED": [
+    {"person": "Camille Rousseau", "film": "Les Ombres de Mars"},
+    {"person": "Camille Rousseau", "film": "Nebula"},
+    {"person": "Camille Rousseau", "film": "Eclipse"},
+    {"person": "Hugo Marchand", "film": "Le Dernier Train"},
+    {"person": "Hugo Marchand", "film": "L'Horizon Perdu"},
+    {"person": "Yasmine Khalil", "film": "Coeurs de Sable"},
+    {"person": "Yasmine Khalil", "film": "Fracture"},
+    {"person": "Diego Fontaine", "film": "Rire Jaune"},
+    {"person": "Diego Fontaine", "film": "La Derniere Scene"}
+  ],
+  "ACTED_IN": [
+    {"person": "Lea Vidal", "film": "Les Ombres de Mars"},
+    {"person": "Marcus Bonnet", "film": "Les Ombres de Mars"},
+    {"person": "Sofia Marin", "film": "Le Dernier Train"},
+    {"person": "Rayan Delattre", "film": "Le Dernier Train"},
+    {"person": "Aicha Benali", "film": "Coeurs de Sable"},
+    {"person": "Lea Vidal", "film": "Coeurs de Sable"},
+    {"person": "Marcus Bonnet", "film": "Nebula"},
+    {"person": "Nina Caron", "film": "Nebula"},
+    {"person": "Lucas Girard", "film": "Rire Jaune"},
+    {"person": "Sofia Marin", "film": "Rire Jaune"},
+    {"person": "Tomas Oliveira", "film": "L'Horizon Perdu"},
+    {"person": "Nina Caron", "film": "L'Horizon Perdu"},
+    {"person": "Rayan Delattre", "film": "Fracture"},
+    {"person": "Aicha Benali", "film": "Fracture"},
+    {"person": "Lucas Girard", "film": "La Derniere Scene"},
+    {"person": "Lea Vidal", "film": "La Derniere Scene"},
+    {"person": "Nina Caron", "film": "Eclipse"},
+    {"person": "Tomas Oliveira", "film": "Eclipse"}
+  ],
+  "PRODUCED_BY": [
+    {"film": "Les Ombres de Mars", "studio": "Lumiere Studios"},
+    {"film": "Nebula", "studio": "Lumiere Studios"},
+    {"film": "Eclipse", "studio": "Lumiere Studios"},
+    {"film": "Le Dernier Train", "studio": "Atlas Pictures"},
+    {"film": "L'Horizon Perdu", "studio": "Atlas Pictures"},
+    {"film": "Coeurs de Sable", "studio": "Nova Films"},
+    {"film": "Fracture", "studio": "Nova Films"},
+    {"film": "Rire Jaune", "studio": "Zenith Productions"},
+    {"film": "La Derniere Scene", "studio": "Zenith Productions"}
+  ],
+  "HAS_GENRE": [
+    {"film": "Les Ombres de Mars", "genre": "Science-fiction"},
+    {"film": "Nebula", "genre": "Science-fiction"},
+    {"film": "Eclipse", "genre": "Science-fiction"},
+    {"film": "Le Dernier Train", "genre": "Thriller"},
+    {"film": "Fracture", "genre": "Thriller"},
+    {"film": "Coeurs de Sable", "genre": "Drame"},
+    {"film": "La Derniere Scene", "genre": "Drame"},
+    {"film": "Rire Jaune", "genre": "Comedie"},
+    {"film": "L'Horizon Perdu", "genre": "Aventure"}
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "films": [
+    {"name": "Les Ombres de Mars", "year": 2021},
+    {"name": "Le Dernier Train", "year": 2019},
+    {"name": "Coeurs de Sable", "year": 2022},
+    {"name": "Nebula", "year": 2023},
+    {"name": "Rire Jaune", "year": 2020},
+    {"name": "L'Horizon Perdu", "year": 2021},
+    {"name": "Fracture", "year": 2023},
+    {"name": "La Derniere Scene", "year": 2022},
+    {"name": "Eclipse", "year": 2024}
+  ],
+  "persons": [
+    {"name": "Camille Rousseau", "role": "Realisateur"},
+    {"name": "Hugo Marchand", "role": "Realisateur"},
+    {"name": "Yasmine Khalil", "role": "Realisateur"},
+    {"name": "Diego Fontaine", "role": "Realisateur"},
+    {"name": "Lea Vidal", "role": "Acteur"},
+    {"name": "Marcus Bonnet", "role": "Acteur"},
+    {"name": "Sofia Marin", "role": "Acteur"},
+    {"name": "Rayan Delattre", "role": "Acteur"},
+    {"name": "Nina Caron", "role": "Acteur"},
+    {"name": "Tomas Oliveira", "role": "Acteur"},
+    {"name": "Aicha Benali", "role": "Acteur"},
+    {"name": "Lucas Girard", "role": "Acteur"}
+  ],
+  "studios": ["Lumiere Studios", "Atlas Pictures", "Nova Films", "Zenith Productions"],
+  "genres": ["Science-fiction", "Thriller", "Drame", "Comedie", "Aventure"]
+}

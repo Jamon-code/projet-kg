@@ -1,0 +1,75 @@
+{
+  "_comment": "Questions de benchmark. 'expected' = reponse attendue (verite terrain). 'cypher' = requete de reference pour le mode Graph Analytics. 'category' aide a analyser ou chaque approche est forte.",
+  "questions": [
+    {
+      "id": "Q1",
+      "category": "factuel-1saut",
+      "question": "Qui a realise le film Nebula ?",
+      "expected": ["Camille Rousseau"],
+      "cypher": "MATCH (p:Person)-[:DIRECTED]->(:Film {name:'Nebula'}) RETURN p.name AS reponse"
+    },
+    {
+      "id": "Q2",
+      "category": "liste-1saut",
+      "question": "Dans quels films a joue Lea Vidal ?",
+      "expected": ["Les Ombres de Mars", "Coeurs de Sable", "La Derniere Scene"],
+      "cypher": "MATCH (:Person {name:'Lea Vidal'})-[:ACTED_IN]->(f:Film) RETURN f.name AS reponse"
+    },
+    {
+      "id": "Q3",
+      "category": "multi-saut",
+      "question": "Quel realisateur a dirige un film dans lequel joue Marcus Bonnet ?",
+      "expected": ["Camille Rousseau"],
+      "cypher": "MATCH (:Person {name:'Marcus Bonnet'})-[:ACTED_IN]->(f:Film)<-[:DIRECTED]-(r:Person) RETURN DISTINCT r.name AS reponse"
+    },
+    {
+      "id": "Q4",
+      "category": "multi-saut",
+      "question": "Quels acteurs ont joue dans un film produit par Lumiere Studios ?",
+      "expected": ["Lea Vidal", "Marcus Bonnet", "Nina Caron", "Tomas Oliveira"],
+      "cypher": "MATCH (a:Person)-[:ACTED_IN]->(f:Film)-[:PRODUCED_BY]->(:Studio {name:'Lumiere Studios'}) RETURN DISTINCT a.name AS reponse"
+    },
+    {
+      "id": "Q5",
+      "category": "multi-saut-semantique",
+      "question": "Dans quel genre est le film realise par Yasmine Khalil dans lequel joue Lea Vidal ?",
+      "expected": ["Drame"],
+      "cypher": "MATCH (:Person {name:'Yasmine Khalil'})-[:DIRECTED]->(f:Film)-[:HAS_GENRE]->(g:Genre), (:Person {name:'Lea Vidal'})-[:ACTED_IN]->(f) RETURN g.name AS reponse"
+    },
+    {
+      "id": "Q6",
+      "category": "agregation",
+      "question": "Quel realisateur a realise le plus de films ?",
+      "expected": ["Camille Rousseau"],
+      "cypher": "MATCH (r:Person)-[:DIRECTED]->(f:Film) RETURN r.name AS reponse, count(f) AS n ORDER BY n DESC LIMIT 1"
+    },
+    {
+      "id": "Q7",
+      "category": "multi-saut",
+      "question": "Avec quels acteurs Nina Caron a-t-elle joue ?",
+      "expected": ["Marcus Bonnet", "Tomas Oliveira"],
+      "cypher": "MATCH (:Person {name:'Nina Caron'})-[:ACTED_IN]->(f:Film)<-[:ACTED_IN]-(a:Person) WHERE a.name <> 'Nina Caron' RETURN DISTINCT a.name AS reponse"
+    },
+    {
+      "id": "Q8",
+      "category": "factuel-1saut",
+      "question": "Quel studio a produit le film Fracture ?",
+      "expected": ["Nova Films"],
+      "cypher": "MATCH (:Film {name:'Fracture'})-[:PRODUCED_BY]->(s:Studio) RETURN s.name AS reponse"
+    },
+    {
+      "id": "Q9",
+      "category": "agregation-semantique",
+      "question": "Combien de films de science-fiction ont ete produits par Lumiere Studios ?",
+      "expected": ["3"],
+      "cypher": "MATCH (f:Film)-[:PRODUCED_BY]->(:Studio {name:'Lumiere Studios'}), (f)-[:HAS_GENRE]->(:Genre {name:'Science-fiction'}) RETURN count(f) AS reponse"
+    },
+    {
+      "id": "Q10",
+      "category": "connexion",
+      "question": "Lea Vidal et Aicha Benali ont-elles joue dans le meme film ? Si oui, lequel ?",
+      "expected": ["Coeurs de Sable"],
+      "cypher": "MATCH (:Person {name:'Lea Vidal'})-[:ACTED_IN]->(f:Film)<-[:ACTED_IN]-(:Person {name:'Aicha Benali'}) RETURN f.name AS reponse"
+    }
+  ]
+}

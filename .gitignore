@@ -1,0 +1,19 @@
+# ===== SECRETS — NE JAMAIS POUSSER =====
+.env
+
+# ===== Donnees / etat local =====
+neo4j/
+data/
+*.zip
+
+# ===== Python =====
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# ===== OS / editeurs =====
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
